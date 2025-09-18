@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android", "web"],
+  "apple": {
+    "modules": ["Bill24SdkModule"]
+  },
+  "android": {
+    "modules": ["com.rn.sdk.bill24.Bill24SdkModule"]
+  }
+}
