@@ -1,7 +1,7 @@
 {
   "name": "react-native-bill24-sdk",
-  "version": "0.1.0",
-  "description": "My new module",
+  "version": "1.0.0",
+  "description": "Unofficial Expo module for Bill24Sdk integration in React Native apps.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
@@ -21,13 +21,16 @@
     "react-native-bill24-sdk",
     "Bill24Sdk"
   ],
-  "repository": "https://github.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chanphiromsok/react-native-bill24-sdk.git"
+  },
   "bugs": {
-    "url": "https://github.com/issues"
+    "url": "https://github.com/chanphiromsok/react-native-bill24-sdk/issues"
   },
   "author": "Phirom <chanphirom.sok@onego.asia> ()",
   "license": "MIT",
-  "homepage": "https://github.com#readme",
+  "homepage": "https://github.com/chanphiromsok/react-native-bill24-sdk#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/react": "~19.1.0",
