@@ -1,36 +1,25 @@
-import { useEvent } from 'expo';
-import Bill24Sdk, { Bill24SdkView } from 'react-native-bill24-sdk';
-import { Button, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { Button, SafeAreaView, ScrollView, Text, View } from "react-native";
+import Bill24Sdk from "react-native-bill24-sdk";
 
 export default function App() {
-  const onChangePayload = useEvent(Bill24Sdk, 'onChange');
-
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.container}>
         <Text style={styles.header}>Module API Example</Text>
-        <Group name="Constants">
-          <Text>{Bill24Sdk.PI}</Text>
-        </Group>
-        <Group name="Functions">
-          <Text>{Bill24Sdk.hello()}</Text>
-        </Group>
         <Group name="Async functions">
           <Button
             title="Set value"
             onPress={async () => {
-              await Bill24Sdk.setValueAsync('Hello from JS!');
+              await Bill24Sdk.instantPaymentSdkTopUp({
+                paymentMethodId: "payment method id",
+                refererKey: "referer key",
+                isDarkMode: false,
+                isProduction: false,
+                isDisplayCurrencySymbol: false,
+                language: "en",
+                testingEnv: "DEMO",
+              });
             }}
-          />
-        </Group>
-        <Group name="Events">
-          <Text>{onChangePayload?.value}</Text>
-        </Group>
-        <Group name="Views">
-          <Bill24SdkView
-            url="https://www.example.com"
-            onLoad={({ nativeEvent: { url } }) => console.log(`Loaded: ${url}`)}
-            style={styles.view}
           />
         </Group>
       </ScrollView>
@@ -58,13 +47,13 @@ const styles = {
   },
   group: {
     margin: 20,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 10,
     padding: 20,
   },
   container: {
     flex: 1,
-    backgroundColor: '#eee',
+    backgroundColor: "#eee",
   },
   view: {
     flex: 1,

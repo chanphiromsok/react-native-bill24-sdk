@@ -41,7 +41,8 @@ android {
     abortOnError false
   }
 }
-
+// https://business-docs.bill24.io/android-sdk-929824m0
 dependencies{
-  implementation("io.bill24:b24paymentsdk:1.1.24")
+  def b24Version = (project.findProperty("b24paymentSdkVersion") ?: rootProject.findProperty("b24paymentSdkVersion") ?: "1.1.24").toString()
+  implementation("io.bill24:b24paymentsdk:${b24Version}")
 }

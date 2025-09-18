@@ -25,6 +25,25 @@
       "predictiveBackGestureEnabled": false,
       "package": "com.rn.sdk.bill24.example"
     },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "15.1",
+            "useFrameworks": "static",
+            "reactNativeReleaseLevel": "experimental"
+          },
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "buildToolsVersion": "35.0.0",
+            "minSdkVersion": 26,
+            "reactNativeReleaseLevel": "experimental"
+          }
+        }
+      ]
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
     }
